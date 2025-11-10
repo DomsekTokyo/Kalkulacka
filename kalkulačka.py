@@ -1,32 +1,32 @@
-from distutils.command.clean import clean
+import math
 from tkinter import *
 okno = Tk()
 
 okno.title("Kalkulačka")
-#okno.iconbitmap("ikonka.ico")
-okno.geometry("500x680+500+300")
+okno.iconbitmap("ikonka.ico")
+okno.geometry("550x660+500+300")
 okno.resizable(False,False)
-okno.config(bg = "#4C5958")
+okno.config(bg = "#006d00")
 main_font = ("Helvetice",20)
 number_font = ("helvetica",30)
 
 
-frame1 = Frame(okno, bg = "#4C5958")
+frame1 = Frame(okno, bg = "#006d00")
 frame1.pack()
-frame2 = Frame(okno, bg = "#4C5958")
+frame2 = Frame(okno, bg = "#426d01")
 frame2.pack()
 
 
-entry = Entry(frame1, width=20, font=("Helvetica", 30), background="#4C5958")
+entry = Entry(frame1, width=23, font=("Helvetica", 30), background="#4C5958")
 entry.config(state="readonly")
 entry.grid(column=0, row=0, pady = 20)
 
 class Tlac:
     po = False
     def __init__(self, text2, souradnicex, souradnicey, okn):
-        self.default_bg = "#4C5958"
-        self.hover_bg = "#5C6C68"
-        self.tlacitko = Button(okn,text= text2, relief="sunken", height=1,width=3,font=("Arial",40), background= "#4C5958", activebackground="#3A5958", command= lambda: self.click(text2))
+        self.default_bg = "#94f567"
+        self.hover_bg = "#94bf67"
+        self.tlacitko = Button(okn,text= text2, relief="sunken", height=1,width=3,font=("Arial",40), background= "#94f567", activebackground="#94bf67", command= lambda: self.click(text2))
         self.tlacitko.grid(row=souradnicex,column=souradnicey,padx=3,pady = 3, ipadx = 0, ipady=0)
 
         self.tlacitko.bind("<Enter>", self.on_enter)
@@ -45,12 +45,20 @@ class Tlac:
         if entry.get() == "Chyba":
             entry.delete(0, END)
 
-        if Tlac.po and text not in ["=", "⌫", "CE", "+", "-", "×", "÷", ")", ","]:
+        if Tlac.po and text not in ["=", "⌫", "CE", "+", "-", "×", "÷", ")", ",","."]:
             entry.delete(0, END)
             Tlac.po = False
 
-        if Tlac.po and text in ["+", "-", "×", "÷", ","]:
+        if Tlac.po and text in ["+", "-", "×", "÷", ",", ".",]:
             Tlac.po = False
+        if text == "π":
+            entry.insert("end",str(3.141))
+            return
+        if text=="x²":
+            entry.insert("end","²")
+            return
+
+
 
         if text == "CE":
 
@@ -65,8 +73,9 @@ class Tlac:
 
             try:
                 obsah = entry.get()
-                obsah = obsah.replace("×","*").replace("÷","/").replace(",",".")
+                obsah = obsah.replace("×","*").replace("÷","/").replace(",",".").replace("²", "**")
                 vysledek = eval(obsah)
+                vysledek = round(vysledek, 2)
                 entry.delete(0, END)
 
                 entry.insert(0, str(vysledek))
@@ -83,23 +92,13 @@ class Tlac:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 cisla = [
-    ("CE", 0, 0), ("⌫", 0, 1), ("(", 0, 2), (")", 0, 3),
-    ("1", 1, 0), ("2", 1, 1), ("3", 1, 2), ("÷",1, 3),
+    ("CE", 0, 0), ("⌫", 0, 1), ("(", 0, 2), (")", 0, 3),("π", 0,4),
+    ("1", 1, 0), ("2", 1, 1), ("3", 1, 2), ("÷",1, 3),("x²", 1, 4),
     ("4", 2, 0), ("5", 2, 1), ("6", 2, 2), ("×", 2,3),
     ("7", 3, 0), ("8", 3, 1), ("9", 3, 2),("-", 3,3),
     (".",4,0),("0", 4, 1),("+",4,2), ("=", 4, 3)
+
 
 ]
 for text,x,y in cisla:
