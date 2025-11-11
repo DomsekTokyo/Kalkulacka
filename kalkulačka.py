@@ -45,21 +45,27 @@ class Tlac:
         if entry.get() == "Chyba":
             entry.delete(0, END)
 
-        if Tlac.po and text not in ["=", "⌫", "CE", "+", "-", "×", "÷", ")", ",","."]:
+        if Tlac.po and text not in ["=", "⌫", "CE", "+", "-", "×", "÷", ")", ",", ".", "x²","%","|x|"]:
             entry.delete(0, END)
             Tlac.po = False
 
-        if Tlac.po and text in ["+", "-", "×", "÷", ",", ".",]:
+        if Tlac.po and text in ["+", "-", "×", "÷", ",", ".", "²","%","|x|"]:
             Tlac.po = False
         if text == "π":
             entry.insert("end",str(3.141))
             return
-        if text=="x²":
-            entry.insert("end","²")
+        if text == "x²":
+
+            entry.insert("end", "²")
+
             return
 
-
-
+        if text == "√":
+            entry.insert("end","√(")
+            return
+        if text == "|x|":
+            entry.insert("end","abs(")
+            return
         if text == "CE":
 
             entry.delete(0, "end")
@@ -72,8 +78,15 @@ class Tlac:
         elif text == "=":
 
             try:
+
                 obsah = entry.get()
-                obsah = obsah.replace("×","*").replace("÷","/").replace(",",".").replace("²", "**")
+                if obsah.count("(") > obsah.count(")"):
+                    obsah += ")" * (obsah.count("(") - obsah.count(")"))
+                obsah = obsah.replace("²", "**2") \
+                    .replace("×", "*") \
+                    .replace("÷", "/") \
+                    .replace(",", ".") \
+                    .replace("√(", "math.sqrt(")
                 vysledek = eval(obsah)
                 vysledek = round(vysledek, 2)
                 entry.delete(0, END)
@@ -95,9 +108,9 @@ class Tlac:
 cisla = [
     ("CE", 0, 0), ("⌫", 0, 1), ("(", 0, 2), (")", 0, 3),("π", 0,4),
     ("1", 1, 0), ("2", 1, 1), ("3", 1, 2), ("÷",1, 3),("x²", 1, 4),
-    ("4", 2, 0), ("5", 2, 1), ("6", 2, 2), ("×", 2,3),
-    ("7", 3, 0), ("8", 3, 1), ("9", 3, 2),("-", 3,3),
-    (".",4,0),("0", 4, 1),("+",4,2), ("=", 4, 3)
+    ("4", 2, 0), ("5", 2, 1), ("6", 2, 2), ("×", 2,3),("√", 2, 4),
+    ("7", 3, 0), ("8", 3, 1), ("9", 3, 2),("-", 3,3),("%",3, 4),
+    (".",4,0),("0", 4, 1),("+",4,2), ("=", 4, 3),("|x|", 4,4)
 
 
 ]

@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30efbfc8-52af-4d29-b90a-03ee78800cf7" name="Changes" comment="kalkulačka už funguje">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="30efbfc8-52af-4d29-b90a-03ee78800cf7" name="Changes" comment="přidání PI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kalkulačka.py" beforeDir="false" afterPath="$PROJECT_DIR$/kalkulačka.py" afterDir="false" />
     </list>
@@ -79,7 +78,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762378850040</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="přidání PI">
+      <option name="closed" value="true" />
+      <created>1762761600777</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762761600777</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +103,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mazání a clear" />
     <MESSAGE value="kalkulačka už funguje" />
-    <option name="LAST_COMMIT_MESSAGE" value="kalkulačka už funguje" />
+    <MESSAGE value="přidání PI" />
+    <option name="LAST_COMMIT_MESSAGE" value="přidání PI" />
   </component>
 </project>
