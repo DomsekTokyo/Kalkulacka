@@ -7,7 +7,7 @@ okno.iconbitmap("ikonka.ico")
 okno.geometry("550x660+500+300")
 okno.resizable(False,False)
 okno.config(bg = "#006d00")
-main_font = ("Helvetice",20)
+main_font = ("Helvetica",20)
 number_font = ("helvetica",30)
 
 
@@ -36,6 +36,13 @@ class Tlac:
     def on_enter(self, event):
         self.tlacitko.config(bg=self.hover_bg)
 
+    def auto_mul(self):
+        posledni = entry.get()[-1:]
+        # NIKDY nepřidávej * před mocninou
+        if posledni == "²":
+            return
+        if posledni.isdigit() or posledni == ")":
+            entry.insert("end", "*")
 
     def on_leave(self, event):
         self.tlacitko.config(bg=self.default_bg)
@@ -52,19 +59,23 @@ class Tlac:
         if Tlac.po and text in ["+", "-", "×", "÷", ",", ".", "²","%","|x|"]:
             Tlac.po = False
         if text == "π":
-            entry.insert("end",str(3.141))
+            self.auto_mul()
+            entry.insert("end", "π")
             return
         if text == "x²":
-
             entry.insert("end", "²")
-
             return
-
+        if text == "(":
+            self.auto_mul()
+            entry.insert("end", "(")
+            return
         if text == "√":
-            entry.insert("end","√(")
+            self.auto_mul()
+            entry.insert("end", "√(")
             return
         if text == "|x|":
-            entry.insert("end","abs(")
+            self.auto_mul()
+            entry.insert("end", "abs(")
             return
         if text == "CE":
 
@@ -82,11 +93,13 @@ class Tlac:
                 obsah = entry.get()
                 if obsah.count("(") > obsah.count(")"):
                     obsah += ")" * (obsah.count("(") - obsah.count(")"))
-                obsah = obsah.replace("²", "**2") \
-                    .replace("×", "*") \
-                    .replace("÷", "/") \
-                    .replace(",", ".") \
+                obsah = (obsah.replace("²", "**2")
+                    .replace("×", "*")
+                    .replace("÷", "/")
+                    .replace(",", ".")
                     .replace("√(", "math.sqrt(")
+                    .replace("π", "math.pi")
+                    .replace("%", "/100"))
                 vysledek = eval(obsah)
                 vysledek = round(vysledek, 2)
                 entry.delete(0, END)
