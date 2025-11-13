@@ -1,4 +1,4 @@
-import math
+
 from tkinter import *
 okno = Tk()
 
@@ -23,6 +23,7 @@ entry.grid(column=0, row=0, pady = 20)
 
 class Tlac:
     po = False
+
     def __init__(self, text2, souradnicex, souradnicey, okn):
         self.default_bg = "#94f567"
         self.hover_bg = "#94bf67"
@@ -33,7 +34,7 @@ class Tlac:
         self.tlacitko.bind("<Leave>", self.on_leave)
 
 
-    def on_enter(self, event):
+    def on_enter(self, _):
         self.tlacitko.config(bg=self.hover_bg)
 
     def auto_mul(self):
@@ -44,7 +45,7 @@ class Tlac:
         if posledni.isdigit() or posledni == ")":
             entry.insert("end", "*")
 
-    def on_leave(self, event):
+    def on_leave(self, _):
         self.tlacitko.config(bg=self.default_bg)
 
     def click(self, text):
