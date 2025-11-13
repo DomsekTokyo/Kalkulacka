@@ -62,6 +62,7 @@ class Tlac:
             self.auto_mul()
             entry.insert("end", "π")
             return
+        #ahoj co to je
         if text == "x²":
             entry.insert("end", "²")
             return
