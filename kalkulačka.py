@@ -1,10 +1,20 @@
 
 from tkinter import *
 okno = Tk()
+import math
+
+
+
+def show_window():
+    okno.attributes("-topmost", True)
+    okno.focus_force()
+    okno.attributes("-topmost", False)
+
+okno.after(100, show_window)
 
 okno.title("Kalkulačka")
 okno.iconbitmap("ikonka.ico")
-okno.geometry("550x660+500+300")
+okno.geometry("550x660+550+200")
 okno.resizable(False,False)
 okno.config(bg = "#006d00")
 main_font = ("Helvetica",20)
@@ -95,13 +105,14 @@ class Tlac:
                 obsah = entry.get()
                 if obsah.count("(") > obsah.count(")"):
                     obsah += ")" * (obsah.count("(") - obsah.count(")"))
-                obsah = (obsah.replace("²", "**2")
-                    .replace("×", "*")
-                    .replace("÷", "/")
-                    .replace(",", ".")
-                    .replace("√(", "math.sqrt(")
-                    .replace("π", "math.pi")
-                    .replace("%", "/100"))
+                obsah = (obsah.replace("√(", "math.sqrt(")
+                         .replace("²", "**2")
+                         .replace("×", "*")
+                         .replace("÷", "/")
+                         .replace(",", ".")
+                         .replace("π", "math.pi")
+                         .replace("%", "/100"))
+
                 vysledek = eval(obsah)
                 vysledek = round(vysledek, 2)
                 entry.delete(0, END)
