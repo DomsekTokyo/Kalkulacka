@@ -4,12 +4,6 @@ okno = Tk()
 import math
 
 
-def resource_path(path):
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, path)
 
 def show_window():
     okno.attributes("-topmost", True)
@@ -19,7 +13,7 @@ def show_window():
 okno.after(100, show_window)
 
 okno.title("Kalkulačka")
-okno.iconbitmap(resource_path("ikonka.ico"))
+
 okno.geometry("550x660+550+200")
 okno.resizable(False,False)
 okno.config(bg = "#006d00")

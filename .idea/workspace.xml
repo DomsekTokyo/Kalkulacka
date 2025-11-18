@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="30efbfc8-52af-4d29-b90a-03ee78800cf7" name="Changes" comment="kalkulačka dokončena">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kalkulačka.py" beforeDir="false" afterPath="$PROJECT_DIR$/kalkulacka.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kalkulacka/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/kalkulacka/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kalkulacka/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/kalkulacka/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kalkulacka/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/kalkulacka/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kalkulacka/kalkulacka.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/kalkulacka/kalkulacka.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kalkulacka/xref-kalkulacka.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/kalkulacka/xref-kalkulacka.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/kalkulacka.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/kalkulacka.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ikonka.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalkulacka.py" beforeDir="false" afterPath="$PROJECT_DIR$/kalkulacka.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +44,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.kalkulačka.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mikul/OneDrive/Plocha/python/Projekt_Kalkulačka&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.kalkulacka.executor": "Run",
+    "Python.kalkulačka.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/mikul/OneDrive/Plocha/python/Projekt_Kalkulačka"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -126,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763412146053</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="kalkulačka dokončena">
+      <option name="closed" value="true" />
+      <created>1763416916318</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763416916318</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
